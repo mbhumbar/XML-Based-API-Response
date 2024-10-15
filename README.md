@@ -29,7 +29,8 @@ Following are the steps to convert JSON Request into the XML Format.
 	 } 
 
  3. create response class
-	
+
+		 @JacksonXmlRootElement(localName = "response")
 		  public class UserResponse {
 		    private String status
 		    private int userId;
