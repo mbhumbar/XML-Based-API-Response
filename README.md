@@ -30,7 +30,8 @@ Following are the steps to convert JSON Request into the XML Format.
 
  3. create response class
     
-	  @JacksonXmlRootElement(localName = "response")
+	
+   	  @JacksonXmlRootElement(localName = "response")
 	  public class UserResponse {
 	    private String status
 	    private int userId;
@@ -42,14 +43,13 @@ Following are the steps to convert JSON Request into the XML Format.
 
 
 4. create the restController class and add the following method
+
 		@RestController
 		public class UserController {
-		
 		    @GetMapping("/")
 		    public String showMessage() {
 		        return "this is the spring boot application";
 		    }
-		
 		    // accept JSON and return XML
 		    @PostMapping(value = "/user",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_XML_VALUE)
 		    public UserResponse getUserInfo(@RequestBody UserRequest userRequest) {
