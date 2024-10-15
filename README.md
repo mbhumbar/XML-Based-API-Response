@@ -3,7 +3,7 @@ Take Request as JSON fomrat and sent the response as XML Fomrat
 Following are the steps to convert JSON Request into the XML Format. 
 
 
-#1. add the following dependency in the pom.xml file
+1. add the following dependency in the pom.xml file
    <!-- Jackson Dependency for JSON -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -20,13 +20,14 @@ Following are the steps to convert JSON Request into the XML Format.
 		</dependency>
 
 2. create request class and response class
-   public class UserRequest {
-    private int userId;
-    private String name;
-    private int age;
-    private String email;
-
-  } 
+   
+	    public class UserRequest {
+	    private int userId;
+	    private String name;
+	    private int age;
+	    private String email;
+	 } 
+ 
   @JacksonXmlRootElement(localName = "response")
   public class UserResponse {
     private String status
